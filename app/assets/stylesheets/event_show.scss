@@ -1,0 +1,9 @@
+tr#event_show_table_results_row {
+  display: none;
+}
+
+tr#event_show_table_results_row.post-event {
+  display: table-row;
+  background: orange;
+}
+

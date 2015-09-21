@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 
   # INDEX
   def index
-    @events = Event.all.order("created_at ASC")
+    @events = Event.all.order("start_datetime DESC")
   end
 
   #NEW
@@ -23,7 +23,6 @@ class EventsController < ApplicationController
                                                       :prediction3, 
                                                       :prediction3_type
                                                     ))
-
     if event.save
       redirect_to event
     else

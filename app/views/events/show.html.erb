@@ -8,6 +8,14 @@
     <td><%= @event.prediction2 %></td>
     <td><%= @event.prediction3 %></td>
   </th>
+
+  <tr id="event_show_table_results_row" class="<%= @event.event_status %>">
+    <td>hello</td>
+    <td>RoHo</td>
+    <td>You're</td>
+    <td>Ace!</td>
+  </tr>
+
   <% @event.user_event_predictions.each do |obj| %>
     <tr>
       <td><%= obj.user.name %></td>

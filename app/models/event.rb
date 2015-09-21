@@ -4,14 +4,17 @@ class Event < ActiveRecord::Base
 
   def event_status
     if start_datetime > Time.now 
-      e_status = 'pre event'
+      e_status = 'pre-event'
     elsif start_datetime <= Time.now && end_datetime > Time.now
-      e_status = 'in progress'
+      e_status = 'in-progress'
     else
-      e_status = 'post event'
+      e_status = 'post-event'
     end
   end
 
-  
+  def winner
+
+  end
+    
 
 end
