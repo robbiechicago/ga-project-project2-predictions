@@ -1,18 +1,19 @@
+
+
 <h1><%= @event.name %></h1>
 
-<table>
+<table id="event_show_table">
   <th>
-    <th></th>
-    <td><% @event.prediction1 %></td>
-    <td><% @event.prediction2 %></td>
-    <td><% @event.prediction3 %></td>
+    <td><%= @event.prediction1 %></td>
+    <td><%= @event.prediction2 %></td>
+    <td><%= @event.prediction3 %></td>
   </th>
   <% @event.user_event_predictions.each do |obj| %>
     <tr>
       <td><%= obj.user.name %></td>
-      <td><%= obj.prediction_1 %></td>
-      <td><%= obj.prediction_2 %></td>
-      <td><%= obj.prediction_3 %></td>
+      <td class="event_show_table_cell" data-type = <%= @event.prediction1_type %>><%= obj.prediction_1 %></td>
+      <td class="event_show_table_cell" data-type = <%= @event.prediction2_type %>><%= obj.prediction_2 %></td>
+      <td class="event_show_table_cell" data-type = <%= @event.prediction3_type %>><%= obj.prediction_3 %></td>
     </tr>
   <% end %>
 </table>

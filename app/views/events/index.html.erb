@@ -1,5 +1,6 @@
 <h1>Hello!</h1>
 
 <% @events.each do |event| %>
-  <div><%= link_to event.name, event %><div>
+  <div><%= link_to event.name, event %>  (<%= event.event_status %>)<div>
 <% end %>
+

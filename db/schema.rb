@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917200801) do
+ActiveRecord::Schema.define(version: 20150920070830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20150917200801) do
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.string   "event_type"
-    t.decimal  "prediction_1_result"
-    t.decimal  "prediction_2_result"
-    t.decimal  "prediction_3_result"
+    t.integer  "prediction_1_result"
+    t.integer  "prediction_2_result"
+    t.integer  "prediction_3_result"
     t.datetime "start_datetime"
     t.datetime "end_datetime"
     t.datetime "created_at",          null: false
@@ -29,14 +29,17 @@ ActiveRecord::Schema.define(version: 20150917200801) do
     t.string   "prediction1"
     t.string   "prediction2"
     t.string   "prediction3"
+    t.string   "prediction1_type"
+    t.string   "prediction2_type"
+    t.string   "prediction3_type"
   end
 
   create_table "user_event_predictions", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "event_id"
-    t.decimal  "prediction_1"
-    t.decimal  "prediction_2"
-    t.decimal  "prediction_3"
+    t.integer  "prediction_1"
+    t.integer  "prediction_2"
+    t.integer  "prediction_3"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

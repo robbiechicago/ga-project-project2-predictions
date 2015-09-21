@@ -1,0 +1,21 @@
+<h1><%= @user.name %></h1>
+
+<% @user.user_event_predictions.each do |e| %>
+  <h2><%= e.event.name %></h2>
+  <table>
+    <tr>
+      <td><%= e.event.prediction1 %></td>
+      <td><%= e.prediction_1 %></td>
+    </tr>
+    <tr>
+      <td><%= e.event.prediction2 %></td>
+      <td><%= e.prediction_2 %></td>
+    </tr>
+    <tr>
+      <td><%= e.event.prediction3 %></td>
+      <td><%= e.prediction_3 %></td>
+    </tr>
+  </table>
+<% end %>
+
+
