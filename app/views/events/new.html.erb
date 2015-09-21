@@ -1,0 +1,38 @@
+<div class="row">
+  <div>
+    <%= form_for @event do |form| %>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+      <br>
+      <%= form.label :event_type %>
+      <%= form.text_field :event_type %>
+      <br>
+      <%= form.label :start_datetime %>
+      <%= form.text_field :start_datetime %>
+      <br>
+      <%= form.label :end_datetime %>
+      <%= form.text_field :end_datetime %>
+      <br>
+      <%= form.label :prediction1 %>
+      <%= form.text_field :prediction1 %>
+      <br>
+      <%= form.label :prediction1_type %>
+      <%= form.text_field :prediction1_type %>
+      <br>
+      <%= form.label :prediction2 %>
+      <%= form.text_field :prediction2 %>
+      <br>
+      <%= form.label :prediction2_type %>
+      <%= form.text_field :prediction2_type %>
+      <br>
+      <%= form.label :prediction3 %>
+      <%= form.text_field :prediction3 %>
+      <br>
+      <%= form.label :prediction3_type %>
+      <%= form.text_field :prediction3_type %>
+      <br>
+      <%= form.submit 'Submit' %>
+
+    <% end %>
+  </div>
+</div>

@@ -5,9 +5,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  #CREATE
-
   #NEW
+
+  #CREATE
   
   #EDIT
   
