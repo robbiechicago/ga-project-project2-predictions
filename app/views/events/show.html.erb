@@ -1,7 +1,9 @@
 
 
 <h1><%= @event.name %></h1>
+<%= current_user.name %> 
 
+<%= link_to 'Predict this event', '/events/' + @event.id.to_s + '/user_event_predictions/new' %>
 <table id="event_show_table">
   <th>
     <td><%= @event.prediction1 %></td>
@@ -10,10 +12,10 @@
   </th>
 
   <tr id="event_show_table_results_row" class="<%= @event.event_status %>">
-    <td>hello</td>
-    <td>RoHo</td>
-    <td>You're</td>
-    <td>Ace!</td>
+    <td>RESULTS:</td>
+    <td><%= @event.prediction_1_result %></td>
+    <td><%= @event.prediction_2_result %></td>
+    <td><%= @event.prediction_3_result %></td>
   </tr>
 
   <% @event.user_event_predictions.each do |obj| %>

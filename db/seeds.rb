@@ -19,6 +19,7 @@ u7 = User.create!(name: 'Zapp Brannigan')
 u8 = User.create!(name: 'John Zoidberg')
 u9 = User.create!(name: 'Kif Kroker')
 u10 = User.create!(name: 'Antonio Calculon')
+u11 = User.create!(name: 'Rob Holloway')
 
 e1 = Event.create!( name:'Premier League: Arsenal vs Chelsea', 
                     event_type:'football', 

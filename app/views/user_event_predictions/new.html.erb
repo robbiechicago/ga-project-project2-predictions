@@ -1,0 +1,23 @@
+<h1>ZING!</h1>
+
+<p><%= @event.name %></p>
+<p><%= @event.event_type %></p>
+
+<div class="row">
+  <div>
+    <%= form_for [@event, @prediction] do |form| %>
+      <%= form.label @event.prediction1 %>
+      <%= form.text_field :prediction_1 %>
+      <br>
+      <%= form.label @event.prediction2 %>
+      <%= form.text_field :prediction_2 %>
+      <br>
+      <%= form.label @event.prediction3 %>
+      <%= form.text_field :prediction_3 %>
+      <br>
+      <%= form.submit 'Submit' %>
+    <% end %>
+  </div>
+</div>
+
+  
