@@ -18,12 +18,22 @@
     <td><%= @event.prediction_3_result %></td>
   </tr>
 
-  <% @event.user_event_predictions.each do |obj| %>
+  <%# @event.user_event_predictions.each do |obj| %>
+  <% @event.order_by_rank.each do |obj| %>
     <tr>
-      <td><%= obj.user.name %></td>
-      <td class="event_show_table_cell" data-type = <%= @event.prediction1_type %>><%= obj.prediction_1 %></td>
-      <td class="event_show_table_cell" data-type = <%= @event.prediction2_type %>><%= obj.prediction_2 %></td>
-      <td class="event_show_table_cell" data-type = <%= @event.prediction3_type %>><%= obj.prediction_3 %></td>
+      <td><%= obj.user.name %> (<%= obj.user_id %>)</td>
+      <td class="event_show_table_cell" data-type="<%= @event.prediction1_type %>">
+        <%= obj.prediction_1 %> (<%= obj.rank(1) %>)
+      </td>
+      <td class="event_show_table_cell" data-type="<%= @event.prediction2_type %>">
+        <%= obj.prediction_2 %> (<%= obj.rank(2) %>)
+      </td>
+      <td class="event_show_table_cell" data-type="<%= @event.prediction3_type %>">
+        <%= obj.prediction_3 %> (<%= obj.rank(3) %>)
+      </td>
+      <td class="event_show_table_cell rank_avg">
+        <%= obj.average_rank %>
+      </td>
     </tr>
   <% end %>
 </table>
