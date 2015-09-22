@@ -1,10 +1,12 @@
-<h1>ZING!</h1>
+<div class="page">
+  <div class="container">
 
+<h1>Make predictions</h1>
+<p><%= link_to 'Return to all events', '/events' %></p>
 <p><%= @event.name %></p>
 <p><%= @event.event_type %></p>
 
-<div class="row">
-  <div>
+
     <%= form_for [@event, @prediction] do |form| %>
       <%= form.label @event.prediction1 %>
       <%= form.text_field :prediction_1 %>

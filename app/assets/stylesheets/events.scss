@@ -1,3 +1,71 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 0;
+  padding-top: 10px;
+  font-family: 'Exo', sans-serif;
+}
+
+#beta {
+  color: maroon;
+}
+
+.status-header {
+  font-family: 'Exo', sans-serif;
+  font-size: 26px;
+  margin-bottom: 3px;
+}
+
+.page {
+  margin: 0;
+  height: 100%;
+  background-image: url("cheer_back1.jpg");
+}
+
+.boxholder {
+  border-top: 1px solid goldenrod;
+}
+
+.eventbox {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 7px;
+  height: 40px;
+  line-height: 40px;
+  width: 350px;
+  margin: 15px;
+  padding: 20px;
+  background: white;
+  opacity:0.5;
+  vertical-align: middle;
+}
+
+.eventbox a {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.bottomlink {
+  background: SandyBrown;
+  height: 30px;
+  line-height: 30px;
+  opacity:0.8;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.bottomlink a {
+  color: lime;
+}

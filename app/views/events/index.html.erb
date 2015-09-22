@@ -1,7 +1,38 @@
-<h1>Hello!</h1>
+<div class="page">
+  <div class="container">
+    <h1 class="title">PredictionSuite - <span id="beta">BETA</span></h1>
 
-<% @events.each do |event| %>
-  <div><%= link_to event.name, event %>  (<%= event.event_status %>)<div>
-<% end %>
+    <div class="boxholder">
+      <p class="status-header">Future events</p>
+      <% @events.each do |event| %>
+        <% if event.event_status == 'pre-event' %>
+          <div class="eventbox"><%= link_to event.name, event %></div>
+        <% end %>
+      <% end %>
+    </div>
 
-<%= link_to 'Create a new event', '/events/new' %>
+
+    <div class="boxholder">
+      <p class="status-header">Events in progress</p>
+      <% @events.each do |event| %>
+        <% if event.event_status == 'in-progress' %>
+          <div class="eventbox"><%= link_to event.name, event %></div>
+        <% end %>
+      <% end %>  
+    </div>
+
+
+    <div class="boxholder">
+      <p class="status-header">Past events</p>
+      <% @events.each do |event| %>
+        <% if event.event_status == 'post-event' %>
+          <div class="eventbox"><%= link_to event.name, event %></div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="boxholder">
+      <div class="eventbox bottomlink"><%= link_to 'Create a new event', '/events/new' %></div>
+    </div>
+  </div>
+</div>

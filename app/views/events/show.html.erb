@@ -1,39 +1,55 @@
+<div class="page">
+  <div class="container">
+
+    <h1><%= @event.name %></h1>
+    <p><%= link_to 'Return to all events', '/events' %></p>
+    <p>Logged in as: <%= current_user.name %>.   
+    <%= link_to 'Predict this event', '/events/' + @event.id.to_s + '/user_event_predictions/new' %></p>
+
+    <table id="event_show_table inner-border">
+      <tr>
+        <td></td>
+        <th class="inner-border"><%= @event.prediction1 %></td>
+        <th class="inner-border"><%= @event.prediction2 %></td>
+        <th class="inner-border"><%= @event.prediction3 %></td>
+        <th class="inner-border">Average Rank</td>
+      </tr>
+
+      <tr id="event_show_table_results_row" class="<%= @event.event_status %>">
+        <td>RESULTS:</td>
+        <td class="inner-border"><%= @event.prediction_1_result %></td>
+        <td class="inner-border"><%= @event.prediction_2_result %></td>
+        <td class="inner-border"><%= @event.prediction_3_result %></td>
+        <td class="inner-border"></td>
+      </tr>
+
+      <%# @event.user_event_predictions.each do |obj| %>
+      <% @event.order_by_rank.each do |obj| %>
+        <tr>
+          <td><%= obj.user.name %> (<%= obj.user_id %>)</td>
+          <td class="event_show_table_cell inner-border" data-type="<%= @event.prediction1_type %>">
+            <%= obj.prediction_1 %> (<%= obj.rank(1) %>)
+          </td>
+          <td class="event_show_table_cell  inner-border" data-type="<%= @event.prediction2_type %>">
+            <%= obj.prediction_2 %> (<%= obj.rank(2) %>)
+          </td>
+          <td class="event_show_table_cell  inner-border" data-type="<%= @event.prediction3_type %>">
+            <%= obj.prediction_3 %> (<%= obj.rank(3) %>)
+          </td>
+          <td class="event_show_table_cell  inner-border rank_avg">
+            <%= obj.average_rank %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 
 
-<h1><%= @event.name %></h1>
-<%= current_user.name %> 
 
-<%= link_to 'Predict this event', '/events/' + @event.id.to_s + '/user_event_predictions/new' %>
-<table id="event_show_table">
-  <th>
-    <td><%= @event.prediction1 %></td>
-    <td><%= @event.prediction2 %></td>
-    <td><%= @event.prediction3 %></td>
-  </th>
 
-  <tr id="event_show_table_results_row" class="<%= @event.event_status %>">
-    <td>RESULTS:</td>
-    <td><%= @event.prediction_1_result %></td>
-    <td><%= @event.prediction_2_result %></td>
-    <td><%= @event.prediction_3_result %></td>
-  </tr>
 
-  <%# @event.user_event_predictions.each do |obj| %>
-  <% @event.order_by_rank.each do |obj| %>
-    <tr>
-      <td><%= obj.user.name %> (<%= obj.user_id %>)</td>
-      <td class="event_show_table_cell" data-type="<%= @event.prediction1_type %>">
-        <%= obj.prediction_1 %> (<%= obj.rank(1) %>)
-      </td>
-      <td class="event_show_table_cell" data-type="<%= @event.prediction2_type %>">
-        <%= obj.prediction_2 %> (<%= obj.rank(2) %>)
-      </td>
-      <td class="event_show_table_cell" data-type="<%= @event.prediction3_type %>">
-        <%= obj.prediction_3 %> (<%= obj.rank(3) %>)
-      </td>
-      <td class="event_show_table_cell rank_avg">
-        <%= obj.average_rank %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+
+
+
+

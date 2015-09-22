@@ -1,9 +1,40 @@
+p {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+table {
+  margin: 20px auto;
+  border-radius: 5px;
+  background: white;
+  opacity: 0.7;
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-size: 18px; 
+}
+
+td {
+  padding: 10px 50px;
+  border: none;
+}
+
 tr#event_show_table_results_row {
   display: none;
 }
 
 tr#event_show_table_results_row.post-event {
   display: table-row;
-  background: orange;
+  font-weight: bold;
 }
 
+tr#event_show_table_results_row.post-event td {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.inner-border {
+  border-left: 1px solid goldenrod;
+}
+
+th {
+  padding: 10px 30px;
+}
